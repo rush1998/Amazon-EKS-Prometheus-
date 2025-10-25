@@ -48,16 +48,16 @@ module "eks" {
   create_iam_role = true
 
   addons = {
-    coredns                = {}
+    coredns = {}
     eks-pod-identity-agent = {
       before_compute = true
     }
-    kube-proxy             = {}
-    vpc-cni                = {
+    kube-proxy = {}
+    vpc-cni = {
       before_compute = true
     }
   }
-  
+
   eks_managed_node_groups = {
     nodes = {
       # Starting on 1.30, AL2023 is the default AMI type for EKS managed node groups
